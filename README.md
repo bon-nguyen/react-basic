@@ -1,12 +1,48 @@
-ReactJS: Prp[s, State or Global State
+#Cách chia component trong Reactjs
+
+#Hai loại component
+- **Container**: Smart component
+    - Quản lý, xử lý dữ liệu
+    - Không quan tâm render UI ntn
+    - Chỉ quan tâm render cái gì
+    - Có thể chưa container con và các components
+
+- **Component** Dumb component
+    - Cho gì render đó.
+    - Không biết dữ liệu đến từ đâu.
+    - Thường chỉ có props, Không có state.
+    - Tái sử dụng, với props khác nhau, Render khách
+
+
+
+
+#ReactJS: PrpOs, State or Global State
 
 Props 
 - Không thay đổi được
 - Được truyền từ component cha
 - Tạo sự đa dạng cho components
+```
+function Box(props){
+    return(
+        <div
+            style= {{background: props.color}}
+        ></div>
+    )
+}
+
+funtion App(){
+    return (
+        <div>
+            <Box color="deeppink">
+            <Box color="green">
+        </div>
+    )
+}
+
 
 State
-- Không thay đổi được
+- Thay đổi được
 - Dùng khi chỉ được sử dụng cới * Một * components hiện tại
 - Ví dụ: 
   - Dữ liệu từ API chỉ dùng trong component.
